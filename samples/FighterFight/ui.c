@@ -17,7 +17,7 @@
 #define FIGHTER_WIDTH		50
 
 
-#define FIGHTER_MOVE_STEP	5		// 飞机在方向键的作用下，每次移动的像素；
+#define FIGHTER_MOVE_STEP	10		// 飞机在方向键的作用下，每次移动的像素；
 
 #define GAME_HEIGHT 1000
 #define GAME_WIDTH	500

@@ -6,10 +6,10 @@
 #define CELL_PIXEL			20
 
 // 用来绘图的颜色
-#define COLOR_SNAKE			RGB(193, 205, 205)
-#define COLOR_FOOD			RGB(153, 255, 51)
+#define COLOR_SNAKE			RGB(0, 0, 0)//黑色
+#define COLOR_FOOD			RGB(255, 0, 0)
 #define COLOR_BOUNDARY		RGB(139, 134, 130)
-#define COLOR_TEXT			RGB(173,216,230)
+#define COLOR_TEXT			RGB(0,0,0)//黑色
 
 // 游戏的参数的设置 
 #define INIT_TIMER_ELAPSE	300	// 初始的时钟周期，确定游戏初始速度
