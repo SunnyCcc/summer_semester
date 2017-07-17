@@ -1,0 +1,52 @@
+王者荣耀连连看游戏实验报告
+一、	学生简介
+1.	姓名：孙以晨
+2.	学号：201611123009
+3.	专业：信息安全
+二、	选题 
+连连看游戏：本游戏模拟王者荣耀，通过移动鼠标，并点击两幅相同的英雄图片，如果两个图片之间的连线拐角小于等于两个，则可以消除。图片有80张，该规则简单容易上手。游戏速度节奏快，画面清晰可爱，音效炫酷节奏感强，适合细心的玩家。
+三、	方案 
+1.	程序组成：
+i.	LinkUpFree.cpp:该游戏最主要的文件,主要包含两部分。
+一部分是游戏参数资源的初始化，包括游戏界面大小，游戏所用到的图片 ：
+			  一部分是游戏主要函数的实现：
+void GameImageInit(HWND hWnd);
+void DeleteAllObject();
+void GameView(HWND hWnd);
+// 主函数
+int APIENTRY WinMain;
+ATOM MyRegisterClass(HINSTANCE hInstance)
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)//回调函数
+
+ii.	LinkList.h/LinkList.c:使用链表的结构，方便插入删除元素，在Table.cpp中用到。
+iii.	Table.h/Table.c:
+a)	Table结构体中包括一个PicturePoint结构体和一个由该结构体元素构成的二维数组tableArrary[A_HEIGHT + 2][A_WEITH + 2]。
+其中PicturePoint结构体:包含图片的x,y坐标，图片是第几次被选择，以及图片类型。
+tableArrary[A_HEIGHT + 2][A_WEITH + 2]。：每一个元素代表连连看中每一个方格。而每一个方格的结构都是PicturePoint结构体。
+b)	Table中函数：	
+1.	PicturePoint Get_first_click();
+2.	PicturePoint Get_second_click();
+3.	void Set_Size(int,int);
+4.	int  Get_Width();
+5.	int  Get_Height();
+6.	void Table_Set_count(int);
+7.	int  Table_Get_count();
+8.	void Set_first_click(int ,int);
+9.	void Set_second_click(int ,int);
+10.	void Delete_first_click(int ,int);
+11.	void Delete_second_click(int ,int);
+12.	bool X_through(int ,int ,int);
+13.	bool Y_through(int ,int ,int);
+14.	bool Two_Link();
+15.	bool Is_Linked();
+16.	bool InitTable();
+iv LinkUpFree.rc:这个文件里面包含了该程序所使用到的所有资源，包括图片，图标，光标
+2.	所用到的数据结构：二维数组，链表
+四、	关键技术 
+这个游戏有两个核心算法，一个是随机图片的生成，一个是消除与否的判断，随机图片的生成采取先随机生成一对位置，再赋值一种图片类型的方法，二判断是否可以消除，就是分情况考虑，从一个元素的四周开始扫描，有空位就可以延伸出去，再看是否可以可以与另一个元素的延伸线进行垂直或者水平（通过两个函数：X-though()和Y-though()判断）连线，如果可以，就可以消除。     
+五、	结果和效果
+1.	可以实现可视化运行，完成连连看最基本的要求。
+2.	在消除不同人物的时候，后期会有不同的消除音效提示
+六、	总结和不足 
+游戏还有很大提升空间，例如加入计时器功能，和计分，进入下一关

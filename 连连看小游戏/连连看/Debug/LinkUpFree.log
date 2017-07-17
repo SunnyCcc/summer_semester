@@ -1,0 +1,9 @@
+﻿D:\VS\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: 中间目录(.\Debug\)包含从另一个项目(LinkUp.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  Table.cpp
+  正在生成代码...
+d:\高中大学\大学\学习\大一下\小学期\连连看\table.cpp(744): warning C4715: “Table::Two_Link”: 不是所有的控件路径都返回值
+  正在跳过...(未检测到相关更改)
+  StdAfx.cpp
+  LinkList.cpp
+  LinkUpFree.vcxproj -> D:\高中大学\大学\学习\大一下\小学期\连连看\.\Debug\LinkUpFree.exe
+  LinkUpFree.vcxproj -> .\Debug\LinkUpFree.pdb (Full PDB)
